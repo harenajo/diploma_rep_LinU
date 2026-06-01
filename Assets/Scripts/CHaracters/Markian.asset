@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d38ae6471370747bddeb9bd81ddc31, type: 3}
+  m_Name: Markian
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: "\u041C\u0430\u0440\u043A\u0456\u044F\u043D \u0417\u0430\u0445\u0430\u0440\u043E\u0432\u0438\u0447"
+  fullbody: {fileID: 3753295361679698464, guid: 8bf3a93bd14179f40949144ed9f1e733, type: 3}
+  neutral: {fileID: 8794910416908934385, guid: 910e5438cc573714f9b2a18ed7c11a3d, type: 3}
+  thinking: {fileID: -3467666881554204371, guid: 0d838fde308e3d84f92938dc92ab662a, type: 3}
+  smile: {fileID: -4474289583541679245, guid: 3c7d75dd77ed44644b755c08d8b817d8, type: 3}
+  angry: {fileID: 3314069680087751951, guid: 7b0e451231e446f479d6a94e27a4c6b8, type: 3}
+  other: {fileID: -8583043612515269636, guid: e81cef091db682a4b91290e9bcb97e8b, type: 3}
+  other2: {fileID: -5492519611803193674, guid: e1649ee265077bd4bb0674a7818c508d, type: 3}
+  body1: {fileID: 0}
+  body2: {fileID: 0}
+  body3: {fileID: 0}

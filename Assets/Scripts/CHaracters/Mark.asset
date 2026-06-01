@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d38ae6471370747bddeb9bd81ddc31, type: 3}
+  m_Name: Mark
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: "\u041C\u0430\u0440\u043A"
+  fullbody: {fileID: -9134968505874989683, guid: 5846acf06ff3214439882c1e04cd086d, type: 3}
+  neutral: {fileID: -2637829625777556166, guid: 6e1316ed8c5b09c47b7ff5aa3d316a51, type: 3}
+  thinking: {fileID: 6798943218132927986, guid: 2970ccc7fc8e7754d8da0bed606de353, type: 3}
+  smile: {fileID: -3969247505037264137, guid: 2f617f36398b17245a7266ac9582c8eb, type: 3}
+  angry: {fileID: -920255798042500567, guid: 6543526b5bb52ea45907c3a9adab511e, type: 3}
+  other: {fileID: 3329370286874598372, guid: a176811c1b0436b4ba0ee379b1bdf40d, type: 3}
+  other2: {fileID: -2910476163751919134, guid: 89d68c2d0cec07d40a3ed4bd9ea78260, type: 3}

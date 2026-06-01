@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d38ae6471370747bddeb9bd81ddc31, type: 3}
+  m_Name: AIIA
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: "\u0410\u0406\u0456\u0430"
+  fullbody: {fileID: -3039728671310192331, guid: 3ea7a0cb89acab849a15d08731374c93, type: 3}
+  neutral: {fileID: 6547833809036356287, guid: 4eaebf17679fd144994c91d0a32a2ced, type: 3}
+  thinking: {fileID: -1469469463539285136, guid: 6cbd368d88c025446957a798d731c508, type: 3}
+  smile: {fileID: -6508145838677442158, guid: 96c635bb4ba059a42a9f2f2f78ff105c, type: 3}
+  angry: {fileID: -7046447077493904603, guid: 6a29d8d69a1d1644dacac5964a499c63, type: 3}
+  other: {fileID: -8923808561859308124, guid: 4607a3ba982cd8a4fabd49a3eafc9527, type: 3}
+  other2: {fileID: 1628199056676619487, guid: e1f789149c2ca5949b371b6f2d0ccc4c, type: 3}
+  body1: {fileID: 0}
+  body2: {fileID: 0}
+  body3: {fileID: 0}

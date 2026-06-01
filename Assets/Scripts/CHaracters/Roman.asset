@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d38ae6471370747bddeb9bd81ddc31, type: 3}
+  m_Name: Roman
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: "\u0420\u043E\u043C\u0430\u043D"
+  fullbody: {fileID: 1026333528771479047, guid: af21c08df999c3349bac960f4885973d, type: 3}
+  neutral: {fileID: 6948976368760398238, guid: 55fbbcf3930138c479d6911d297094fc, type: 3}
+  thinking: {fileID: -5172246722645790028, guid: 61410ff06f5dedd4fb48eec6d6ae3d20, type: 3}
+  smile: {fileID: 2808774452444679913, guid: 49a3c9f7dab70e444a67e6f637a78d18, type: 3}
+  angry: {fileID: 2181205829802158074, guid: fcbed4fd14b6faa4fb2731050badd722, type: 3}
+  other: {fileID: -517152028142281964, guid: 9f56e9ffe0254a94783274de3f2c7a90, type: 3}
+  other2: {fileID: 4818087908965702996, guid: b946cdbc7008fc94ba08f6442953408e, type: 3}
+  body1: {fileID: -1540426309290004842, guid: 182c414e14f1ba64cacf2edd7a6ee702, type: 3}
+  body2: {fileID: -2301900891250477048, guid: a75c02de3a7f6a245ae501ed9ec9bde0, type: 3}
+  body3: {fileID: 7971926198489127399, guid: 8c0c1c077c4d87d4da595ee54f79da73, type: 3}

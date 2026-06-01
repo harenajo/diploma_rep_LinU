@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d38ae6471370747bddeb9bd81ddc31, type: 3}
+  m_Name: "\u041B\u0435\u0432"
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterName: "\u041B\u0435\u0432"
+  fullbody: {fileID: -4209741386619083872, guid: c1711cb4f18c9cb43a43c0a2ffd1fcc1, type: 3}
+  neutral: {fileID: 8901849296393602954, guid: 0b8ad05b4db10c74c8fb0e0b2477f422, type: 3}
+  thinking: {fileID: 1231771444867013642, guid: 6abadcdf656adf341a64cd1132c74c67, type: 3}
+  smile: {fileID: -6531176231263588798, guid: 53c8474f829c92841a5cbddb91e1aa07, type: 3}
+  angry: {fileID: 1528960407192181723, guid: ac813d2fa53b49142a4a8750995d01c8, type: 3}
+  other: {fileID: 6707226509417767014, guid: 373059add761fba42932959a7fd1b39e, type: 3}
+  other2: {fileID: -1947353152814464096, guid: 6452d2d1f3b35794facb9f26c2e75b5d, type: 3}
