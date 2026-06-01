@@ -42,7 +42,7 @@ public class RoomController : MonoBehaviour
     [SerializeField] private TMP_Text clockConfirmText;
     [SerializeField] private Button clockStartNextDayButton;
     [SerializeField] private Button clockCancelButton;
-    [SerializeField] private int fallbackNextSceneIndex = 4;
+    [SerializeField] private int fallbackNextSceneIndex = 3;
 
     [Header("Controllers")]
     [SerializeField] private TryCipher cipherTryController;

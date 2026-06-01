@@ -9065,7 +9065,7 @@ MonoBehaviour:
   blackFrame: {r: 0, g: 0, b: 0, a: 1}
   yellowFrame: {r: 1, g: 0.9247515, b: 0, a: 0}
   laptopController: {fileID: 107002335}
-  nextSceneIndex: 3
+  nextSceneIndex: 2
 --- !u!4 &1279289201
 Transform:
   m_ObjectHideFlags: 0

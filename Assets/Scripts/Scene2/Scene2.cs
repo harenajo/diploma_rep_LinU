@@ -59,7 +59,7 @@ public class Scene2 : MonoBehaviour
     [SerializeField] private AudioClip doorSFX;
 
     [Header("Scene")]
-    [SerializeField] private int nextSceneIndex = 4;
+    [SerializeField] private int nextSceneIndex = 2;
 
     [Header("Background Objects")]
     [SerializeField] private GameObject morningBackground;

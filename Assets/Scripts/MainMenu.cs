@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         SaveTransferValue = PlayerPrefs.GetInt("LoadState");
-        if (SaveTransferValue > 0)
+        if (SaveTransferValue >= 0)
         {
             SceneToLoad = SaveTransferValue + 1;
             ClickSound.Play();
@@ -66,7 +66,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator TrasferToScene()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
 
     }
 

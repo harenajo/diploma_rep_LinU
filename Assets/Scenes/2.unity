@@ -9119,7 +9119,7 @@ MonoBehaviour:
   clockConfirmText: {fileID: 0}
   clockStartNextDayButton: {fileID: 0}
   clockCancelButton: {fileID: 0}
-  fallbackNextSceneIndex: 4
+  fallbackNextSceneIndex: 0
   cipherTryController: {fileID: 2029701752}
   pageClickCooldown: 0.15
 --- !u!114 &405377726

@@ -587,6 +587,8 @@ public class Scene1 : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(nextSceneIndex);
+
+
     }
 
     private void SetActiveSafe(GameObject obj, bool active)

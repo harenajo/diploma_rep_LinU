@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class TryCipher : MonoBehaviour
 {
-    private const string UpperAlphabet = "ÀÁÂÃ¥ÄÅªÆÇÈ²¯ÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÜŞß";
-    private const string LowerAlphabet = "àáâã´äåºæçè³¿éêëìíîïğñòóôõö÷øùüşÿ";
-    private const string PolybiusAlphabet = "ÀÁÂÃ¥ÄÅªÆÇÈ²¯ÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÜŞß!.)";
-    private readonly string[] UkrainianFrequencyHints = { "Î", "À", "²", "Í", "Ò", "Å", "Ğ", "Ñ", "Â", "Ë" };
+    private const string UpperAlphabet = "ĞĞ‘Ğ’Ğ“ÒĞ”Ğ•Ğ„Ğ–Ğ—Ğ˜Ğ†Ğ‡Ğ™ĞšĞ›ĞœĞĞĞŸĞ Ğ¡Ğ¢Ğ£Ğ¤Ğ¥Ğ¦Ğ§Ğ¨Ğ©Ğ¬Ğ®Ğ¯";
+    private const string LowerAlphabet = "Ğ°Ğ±Ğ²Ğ³Ò‘Ğ´ĞµÑ”Ğ¶Ğ·Ğ¸Ñ–Ñ—Ğ¹ĞºĞ»Ğ¼Ğ½Ğ¾Ğ¿Ñ€ÑÑ‚ÑƒÑ„Ñ…Ñ†Ñ‡ÑˆÑ‰ÑŒÑÑ";
+    private const string PolybiusAlphabet = "ĞĞ‘Ğ’Ğ“ÒĞ”Ğ•Ğ„Ğ–Ğ—Ğ˜Ğ†Ğ‡Ğ™ĞšĞ›ĞœĞĞĞŸĞ Ğ¡Ğ¢Ğ£Ğ¤Ğ¥Ğ¦Ğ§Ğ¨Ğ©Ğ¬Ğ®Ğ¯!.)";
+    private readonly string[] UkrainianFrequencyHints = { "Ğ", "Ğ", "Ğ†", "Ğ", "Ğ¢", "Ğ•", "Ğ ", "Ğ¡", "Ğ’", "Ğ›" };
 
     [Header("Panels")]
     [SerializeField] private GameObject caesarPanel;
@@ -30,13 +30,13 @@ public class TryCipher : MonoBehaviour
     [SerializeField] private int caesarShift = 3;
 
     [Header("Caesar Wheel Visual")]
-    [Tooltip("Ñşäè ïåğåòÿãíè âíóòğ³øíº ê³ëüöå Öåçàğÿ, ÿêå ìàº îáåğòàòèñÿ.")]
+    [Tooltip("Ğ¡ÑĞ´Ğ¸ Ğ¿ĞµÑ€ĞµÑ‚ÑĞ³Ğ½Ğ¸ Ğ²Ğ½ÑƒÑ‚Ñ€Ñ–ÑˆĞ½Ñ” ĞºÑ–Ğ»ÑŒÑ†Ğµ Ğ¦ĞµĞ·Ğ°Ñ€Ñ, ÑĞºĞµ Ğ¼Ğ°Ñ” Ğ¾Ğ±ĞµÑ€Ñ‚Ğ°Ñ‚Ğ¸ÑÑ.")]
     [SerializeField] private RectTransform caesarInnerRing;
-    [Tooltip("ßêùî ê³ëüöå êğóòèòüñÿ íå â òîé á³ê, óâ³ìêíè/âèìêíè öåé ïàğàìåòğ.")]
+    [Tooltip("Ğ¯ĞºÑ‰Ğ¾ ĞºÑ–Ğ»ÑŒÑ†Ğµ ĞºÑ€ÑƒÑ‚Ğ¸Ñ‚ÑŒÑÑ Ğ½Ğµ Ğ² Ñ‚Ğ¾Ğ¹ Ğ±Ñ–Ğº, ÑƒĞ²Ñ–Ğ¼ĞºĞ½Ğ¸/Ğ²Ğ¸Ğ¼ĞºĞ½Ğ¸ Ñ†ĞµĞ¹ Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€.")]
     [SerializeField] private bool invertCaesarRingRotation = false;
-    [Tooltip("Óêğà¿íñüêèé àëôàâ³ò ìàº 33 ë³òåğè, òîìó îäèí êğîê = 360 / 33.")]
+    [Tooltip("Ğ£ĞºÑ€Ğ°Ñ—Ğ½ÑÑŒĞºĞ¸Ğ¹ Ğ°Ğ»Ñ„Ğ°Ğ²Ñ–Ñ‚ Ğ¼Ğ°Ñ” 33 Ğ»Ñ–Ñ‚ĞµÑ€Ğ¸, Ñ‚Ğ¾Ğ¼Ñƒ Ğ¾Ğ´Ğ¸Ğ½ ĞºÑ€Ğ¾Ğº = 360 / 33.")]
     [SerializeField] private int caesarAlphabetSize = 33;
-    [Tooltip("Ïî÷àòêîâèé êóò ê³ëüöÿ, ÿêùî ñïğàéò íàìàëüîâàíèé íå ç íóëüîâîãî ïîëîæåííÿ.")]
+    [Tooltip("ĞŸĞ¾Ñ‡Ğ°Ñ‚ĞºĞ¾Ğ²Ğ¸Ğ¹ ĞºÑƒÑ‚ ĞºÑ–Ğ»ÑŒÑ†Ñ, ÑĞºÑ‰Ğ¾ ÑĞ¿Ñ€Ğ°Ğ¹Ñ‚ Ğ½Ğ°Ğ¼Ğ°Ğ»ÑŒĞ¾Ğ²Ğ°Ğ½Ğ¸Ğ¹ Ğ½Ğµ Ğ· Ğ½ÑƒĞ»ÑŒĞ¾Ğ²Ğ¾Ğ³Ğ¾ Ğ¿Ğ¾Ğ»Ğ¾Ğ¶ĞµĞ½Ğ½Ñ.")]
     [SerializeField] private float caesarRingBaseAngle = 0f;
 
     [Header("Vigenere UI")]
@@ -65,7 +65,8 @@ public class TryCipher : MonoBehaviour
     [SerializeField] private TMP_Text[] frequencyLetters;
     [SerializeField] private TMP_Text[] frequencyPercents;
     [SerializeField] private TMP_InputField[] replacementFromInputs;
-    [SerializeField] private TMP_Text[] replacementToTexts;
+    [Tooltip("ĞŸÑ€Ğ°Ğ²Ğ° ĞºĞ¾Ğ»Ğ¾Ğ½ĞºĞ° Ğ·Ğ°Ğ¼Ñ–Ğ½Ğ¸ / Ğ³Ñ–Ğ¿Ğ¾Ñ‚ĞµĞ·Ğ¸: Ñ†Ğµ Ğ¼Ğ°ÑÑ‚ÑŒ Ğ±ÑƒÑ‚Ğ¸ TMP_InputField, Ğ° Ğ½Ğµ TMP_Text.")]
+    [SerializeField] private TMP_InputField[] replacementToInputs;
     [SerializeField] private Button frequencyUpdateButton;
     [SerializeField] private Button frequencyResetButton;
     [SerializeField] private Button frequencyBackButton;
@@ -79,6 +80,49 @@ public class TryCipher : MonoBehaviour
         RefreshCaesarWheel();
         RefreshVigenereAlphabetPreview();
         SetupButtons();
+        SetupFrequencyInputListeners();
+        SetupFrequencyCipherInputListener();
+    }
+
+    private void SetupFrequencyInputListeners()
+    {
+        AddInputListeners(replacementFromInputs);
+        AddInputListeners(replacementToInputs);
+    }
+
+    private void SetupFrequencyCipherInputListener()
+    {
+        if (frequencyCipherInput == null)
+            return;
+
+        frequencyCipherInput.onValueChanged.RemoveListener(OnFrequencyCipherChanged);
+        frequencyCipherInput.onValueChanged.AddListener(OnFrequencyCipherChanged);
+    }
+
+    private void OnFrequencyCipherChanged(string value)
+    {
+        UpdateFrequencyAnalysis(false);
+    }
+
+    private void AddInputListeners(TMP_InputField[] inputs)
+    {
+        if (inputs == null)
+            return;
+
+        foreach (TMP_InputField input in inputs)
+        {
+            if (input == null)
+                continue;
+
+            input.characterLimit = 1;
+            input.onValueChanged.RemoveListener(OnFrequencyReplacementChanged);
+            input.onValueChanged.AddListener(OnFrequencyReplacementChanged);
+        }
+    }
+
+    private void OnFrequencyReplacementChanged(string value)
+    {
+        ApplyFrequencyReplacements();
     }
 
     private void SetupButtons()
@@ -264,6 +308,7 @@ public class TryCipher : MonoBehaviour
 
         SetText(vigenereResultText, Vigenere(input, key, true));
         RefreshVigenereKeyPreview(input, key);
+        RefreshVigenereAlphabetUsage(input, key, true);
     }
 
     public void DecryptVigenere()
@@ -273,6 +318,7 @@ public class TryCipher : MonoBehaviour
 
         SetText(vigenereResultText, Vigenere(input, key, false));
         RefreshVigenereKeyPreview(input, key);
+        RefreshVigenereAlphabetUsage(input, key, false);
     }
 
     private string Vigenere(string input, string key, bool encrypt)
@@ -283,7 +329,7 @@ public class TryCipher : MonoBehaviour
         key = NormalizeLettersOnly(key).ToUpper();
 
         if (string.IsNullOrEmpty(key))
-            return "Ââåä³òü êëş÷.";
+            return "Ğ’Ğ²ĞµĞ´Ñ–Ñ‚ÑŒ ĞºĞ»ÑÑ‡.";
 
         List<char> result = new List<char>();
         int keyIndex = 0;
@@ -369,7 +415,77 @@ public class TryCipher : MonoBehaviour
     private void RefreshVigenereAlphabetPreview()
     {
         SetText(vigenereAlphabetText, UpperAlphabet);
-        SetText(vigenereAlphabetResultText, "");
+        SetText(vigenereAlphabetResultText, "ĞŸÑ–ÑĞ»Ñ ÑˆĞ¸Ñ„Ñ€ÑƒĞ²Ğ°Ğ½Ğ½Ñ Ñ‚ÑƒÑ‚ Ğ·'ÑĞ²Ğ»ÑÑ‚ÑŒÑÑ Ğ°Ğ»Ñ„Ğ°Ğ²Ñ–Ñ‚Ğ¸, ÑĞºÑ– Ğ²Ğ¸ĞºĞ¾Ñ€Ğ¸ÑÑ‚Ğ¾Ğ²ÑƒĞ²Ğ°Ğ»Ğ¸ÑÑ Ğ·Ğ° ĞºĞ»ÑÑ‡ĞµĞ¼.");
+    }
+
+    private void RefreshVigenereAlphabetUsage(string input, string key, bool encrypt)
+    {
+        key = NormalizeLettersOnly(key).ToUpper();
+
+        if (string.IsNullOrEmpty(key))
+        {
+            SetText(vigenereAlphabetText, UpperAlphabet);
+            SetText(vigenereAlphabetResultText, "Ğ’Ğ²ĞµĞ´Ñ–Ñ‚ÑŒ ĞºĞ»ÑÑ‡, Ñ‰Ğ¾Ğ± Ğ¿Ğ¾Ğ±Ğ°Ñ‡Ğ¸Ñ‚Ğ¸ Ğ²Ğ¸ĞºĞ¾Ñ€Ğ¸ÑÑ‚Ğ°Ğ½Ñ– Ğ°Ğ»Ñ„Ğ°Ğ²Ñ–Ñ‚Ğ¸.");
+            return;
+        }
+
+        List<char> usedKeyLetters = GetUsedKeyLetters(input, key);
+
+        if (usedKeyLetters.Count == 0)
+        {
+            SetText(vigenereAlphabetText, UpperAlphabet);
+            SetText(vigenereAlphabetResultText, "Ğ£ Ñ‚ĞµĞºÑÑ‚Ñ– Ğ½ĞµĞ¼Ğ°Ñ” Ğ»Ñ–Ñ‚ĞµÑ€ Ğ´Ğ»Ñ ÑˆĞ¸Ñ„Ñ€ÑƒĞ²Ğ°Ğ½Ğ½Ñ.");
+            return;
+        }
+
+        string usage = encrypt ? "Ğ’Ğ¸ĞºĞ¾Ñ€Ğ¸ÑÑ‚Ğ°Ğ½Ñ– Ğ°Ğ»Ñ„Ğ°Ğ²Ñ–Ñ‚Ğ¸ Ğ´Ğ»Ñ ÑˆĞ¸Ñ„Ñ€ÑƒĞ²Ğ°Ğ½Ğ½Ñ:\n" : "Ğ’Ğ¸ĞºĞ¾Ñ€Ğ¸ÑÑ‚Ğ°Ğ½Ñ– Ğ°Ğ»Ñ„Ğ°Ğ²Ñ–Ñ‚Ğ¸ Ğ´Ğ»Ñ Ğ´ĞµÑˆĞ¸Ñ„Ñ€ÑƒĞ²Ğ°Ğ½Ğ½Ñ:\n";
+
+        foreach (char keyLetter in usedKeyLetters)
+        {
+            int shift = UpperAlphabet.IndexOf(keyLetter);
+
+            if (shift < 0)
+                continue;
+
+            string shiftedAlphabet = BuildShiftedAlphabet(shift);
+            usage += keyLetter + " â†’ " + shiftedAlphabet + "\n";
+        }
+
+        SetText(vigenereAlphabetText, UpperAlphabet);
+        SetText(vigenereAlphabetResultText, usage.TrimEnd());
+    }
+
+    private List<char> GetUsedKeyLetters(string input, string key)
+    {
+        List<char> result = new List<char>();
+        int keyIndex = 0;
+
+        foreach (char c in input)
+        {
+            char up = char.ToUpper(c);
+
+            if (!UpperAlphabet.Contains(up))
+                continue;
+
+            char keyLetter = key[keyIndex % key.Length];
+
+            if (!result.Contains(keyLetter))
+                result.Add(keyLetter);
+
+            keyIndex++;
+        }
+
+        return result;
+    }
+
+    private string BuildShiftedAlphabet(int shift)
+    {
+        string result = "";
+
+        for (int i = 0; i < UpperAlphabet.Length; i++)
+            result += ShiftChar(UpperAlphabet, i, shift);
+
+        return result;
     }
 
     private void FillPolybiusGrid()
@@ -452,13 +568,21 @@ public class TryCipher : MonoBehaviour
 
     public void UpdateFrequencyAnalysis()
     {
+        UpdateFrequencyAnalysis(true);
+    }
+
+    private void UpdateFrequencyAnalysis(bool refillHypotheses)
+    {
         string text = frequencyCipherInput != null ? frequencyCipherInput.text : "";
         Dictionary<char, int> counts = CountLetters(text);
         int total = counts.Values.Sum();
-        List<KeyValuePair<char, int>> ordered = counts.OrderByDescending(pair => pair.Value).ToList();
+        List<KeyValuePair<char, int>> ordered = counts
+            .OrderByDescending(pair => pair.Value)
+            .ThenBy(pair => pair.Key)
+            .ToList();
 
         FillFrequencyColumns(ordered, total);
-        FillAutomaticFrequencyHypotheses(ordered);
+        FillFrequencyReplacementRows(ordered, refillHypotheses);
         ApplyFrequencyReplacements();
     }
 
@@ -487,19 +611,35 @@ public class TryCipher : MonoBehaviour
         }
     }
 
-    private void FillAutomaticFrequencyHypotheses(List<KeyValuePair<char, int>> ordered)
+    private void FillFrequencyReplacementRows(List<KeyValuePair<char, int>> ordered, bool refillHypotheses)
     {
         int rows = Mathf.Min(
             replacementFromInputs != null ? replacementFromInputs.Length : 0,
-            replacementToTexts != null ? replacementToTexts.Length : 0
+            replacementToInputs != null ? replacementToInputs.Length : 0
         );
 
         for (int i = 0; i < rows; i++)
         {
-            if (replacementFromInputs[i] != null)
-                replacementFromInputs[i].text = i < ordered.Count ? ordered[i].Key.ToString() : "";
+            string oldFrom = replacementFromInputs[i] != null ? replacementFromInputs[i].text.Trim().ToUpper() : "";
+            string oldTo = replacementToInputs[i] != null ? replacementToInputs[i].text.Trim().ToUpper() : "";
+            string newFrom = i < ordered.Count ? ordered[i].Key.ToString() : "";
 
-            SetText(replacementToTexts[i], i < UkrainianFrequencyHints.Length && i < ordered.Count ? UkrainianFrequencyHints[i] : "");
+            if (replacementFromInputs[i] != null)
+                replacementFromInputs[i].text = newFrom;
+
+            if (replacementToInputs[i] == null)
+                continue;
+
+            if (string.IsNullOrEmpty(newFrom))
+            {
+                replacementToInputs[i].text = "";
+                continue;
+            }
+
+            bool rowLetterChanged = oldFrom != newFrom;
+
+            if (refillHypotheses || string.IsNullOrEmpty(oldTo) || rowLetterChanged)
+                replacementToInputs[i].text = i < UkrainianFrequencyHints.Length ? UkrainianFrequencyHints[i] : "";
         }
     }
 
@@ -530,13 +670,13 @@ public class TryCipher : MonoBehaviour
 
         int count = Mathf.Min(
             replacementFromInputs != null ? replacementFromInputs.Length : 0,
-            replacementToTexts != null ? replacementToTexts.Length : 0
+            replacementToInputs != null ? replacementToInputs.Length : 0
         );
 
         for (int i = 0; i < count; i++)
         {
             string from = replacementFromInputs[i] != null ? replacementFromInputs[i].text.Trim().ToUpper() : "";
-            string to = replacementToTexts[i] != null ? replacementToTexts[i].text.Trim().ToUpper() : "";
+            string to = replacementToInputs[i] != null ? replacementToInputs[i].text.Trim().ToUpper() : "";
 
             if (from.Length == 0 || to.Length == 0)
                 continue;
@@ -574,7 +714,7 @@ public class TryCipher : MonoBehaviour
             frequencyCipherInput.text = "";
 
         ClearInputFields(replacementFromInputs);
-        ClearTexts(replacementToTexts);
+        ClearInputFields(replacementToInputs);
         ClearTexts(frequencyLetters);
         ClearTexts(frequencyPercents);
 
